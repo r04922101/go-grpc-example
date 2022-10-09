@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/r04922101/go-grpc-example/reflection";
+package reflection;
+import "google/protobuf/timestamp.proto";
+
+service HelloService {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
+
+// The response message containing the greetings
+message HelloResponse {
+  string message = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
